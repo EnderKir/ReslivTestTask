@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domain1</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.addEventListener("message", function(event) {
+        if (event.origin !== 'http://localhost:4000') {
+            return;
+        }
+        switch (event.data) {
+            case "write":
+                localStorage.setItem('alex', 'kirillov');
+                localStorage.setItem('Alex', 'Kirillov');
+                localStorage.setItem('ALEX', 'KIRILLOV');
+                console.log("written");
+                break;
+            case "read":
+                console.log(localStorage.getItem("Alex"));
+                break;
+            case "delete":
+                localStorage.removeItem('alex');
+                console.log("removed");
+                break;
+        }
+    });
+</script>
+</body>
+</html>
