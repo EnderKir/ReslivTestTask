@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domain2</title>
+</head>
+<body>
+<iframe id="targetFrame" src="http://localhost:3000"></iframe>
+<script type="text/javascript">
+    const ifr = document.getElementById("targetFrame");
+    ifr.onload = function() {
+        const iframeWindow = ifr.contentWindow;
+        iframeWindow.postMessage("write", "http://localhost:3000");
+        iframeWindow.postMessage("delete", "http://localhost:3000");
+        iframeWindow.postMessage("read", "http://localhost:3000");
+    }
+</script>
+</body>
+</html>
