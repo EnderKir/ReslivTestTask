@@ -1,0 +1,9 @@
+.delete-button {
+    text-decoration: none;
+    color: red;
+    margin-left: 15px;
+}
+.employee {
+    display: flex;
+    align-items: center;
+}
