@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domain1</title>
+</head>
+<body>
+<script type="text/javascript">
+    function write(callback) {
+        localStorage.setItem('alex', 'kirillov');
+        localStorage.setItem('Alex', 'Kirillov');
+        localStorage.setItem('ALEX', 'KIRILLOV');
+        callback();
+        console.log("written");
+    }
+
+    function read(callback) {
+        console.log(localStorage.getItem("Alex"));
+        callback()
+    }
+
+    function remove(callback) {
+        localStorage.removeItem('alex');
+        console.log("removed");
+        callback();
+    }
+</script>
+</body>
+</html>

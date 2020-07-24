@@ -10,6 +10,7 @@
     const ifr = document.getElementById("targetFrame");
     ifr.onload = function() {
         const iframeWindow = ifr.contentWindow;
+        iframeWindow.bla();
         iframeWindow.postMessage("write", "http://localhost:3000");
         iframeWindow.postMessage("delete", "http://localhost:3000");
         iframeWindow.postMessage("read", "http://localhost:3000");
